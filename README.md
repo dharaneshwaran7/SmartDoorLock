@@ -17,42 +17,33 @@ Jumper Wires
 Breadboard (optional)
 
 # Circuit Connections
-1. RFID RC522 Reader (SPI Interface)
-The RFID module communicates with the Arduino via the SPI protocol. The pin connections are as follows:
+RFID RC522 Module (SPI Interface)
+SDA (SS) → Arduino Pin 10: This pin selects the slave device (RFID Reader).
+SCK (Clock) → Arduino Pin 13: This pin synchronizes the data transmission.
+MOSI (Data In) → Arduino Pin 11: This pin sends data from Arduino to the RFID reader.
+MISO (Data Out) → Arduino Pin 12: This pin receives data from the RFID reader to Arduino.
+RST (Reset) → Arduino Pin 9: Resets the module.
+VCC → Arduino 5V: Power supply for the RFID module.
+GND → Arduino GND: Ground connection.
 
-RFID Pin	Pin Name	Arduino Pin
-SDA	SS	Pin 10
-SCK	Clock	Pin 13
-MOSI	Data In	Pin 11
-MISO	Data Out	Pin 12
-IRQ	Interrupt	Not Connected
-RST	Reset	Pin 9
-GND	Ground	GND
-VCC	Power	5V
+I2C LCD Display
+SDA (Data) → Arduino A4: I2C data line for communication.
+SCL (Clock) → Arduino A5: I2C clock line for synchronization.
+VCC → Arduino 5V: Power supply for the LCD display.
+GND → Arduino GND: Ground connection.
 
-2. I2C LCD Display
-The LCD connects to the Arduino using the I2C interface, requiring only 4 connections:
+Buzzer
++ (Positive) → Arduino Pin 7: Digital pin to control when the buzzer sounds.
+- (Negative) → Arduino GND: Ground connection.
+- 
+Servo Motor
+Signal (PWM) → Arduino Pin 6: Pulse Width Modulation signal to control the position of the servo motor.
+VCC → Arduino 5V: Power supply for the servo motor.
+GND → Arduino GND: Ground connection.
 
-LCD Pin	Pin Name	Arduino Pin
-GND	Ground	GND
-VCC	Power	5V
-SDA	Data	A4
-SCL	Clock	A5
-
-3. Buzzer
-The buzzer provides audio feedback when an RFID tag is scanned:
-
-Buzzer Pin	Pin Name	Arduino Pin
-+	Positive	Pin 7
--	Ground	GND
--	
-4. Servo Motor
-The servo motor simulates the door opening or closing when an RFID tag is approved. It requires the following connections:
-
-Servo Pin	Pin Name	Arduino Pin
-Signal	PWM	Pin 6
-VCC	Power	5V
-GND	Ground	GND
+Power Supply
+5V from the Arduino will power the RFID module, LCD display, and the servo motor.
+GND: Ensure all components share the common ground to avoid electrical problems.
 
 # Summary of Connections
 Component	Pin Name	Arduino Pin
