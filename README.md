@@ -19,45 +19,44 @@ Breadboard (optional)
 # Circuit Connections
 RFID RC522 Module (SPI Interface)
 SDA (SS) → Arduino Pin 10: This pin selects the slave device (RFID Reader).
+
 SCK (Clock) → Arduino Pin 13: This pin synchronizes the data transmission.
+
 MOSI (Data In) → Arduino Pin 11: This pin sends data from Arduino to the RFID reader.
+
 MISO (Data Out) → Arduino Pin 12: This pin receives data from the RFID reader to Arduino.
+
 RST (Reset) → Arduino Pin 9: Resets the module.
+
 VCC → Arduino 5V: Power supply for the RFID module.
+
 GND → Arduino GND: Ground connection.
 
 I2C LCD Display
 SDA (Data) → Arduino A4: I2C data line for communication.
+
 SCL (Clock) → Arduino A5: I2C clock line for synchronization.
+
 VCC → Arduino 5V: Power supply for the LCD display.
+
 GND → Arduino GND: Ground connection.
 
 Buzzer
 + (Positive) → Arduino Pin 7: Digital pin to control when the buzzer sounds.
++ 
 - (Negative) → Arduino GND: Ground connection.
-- 
+  
 Servo Motor
 Signal (PWM) → Arduino Pin 6: Pulse Width Modulation signal to control the position of the servo motor.
+
 VCC → Arduino 5V: Power supply for the servo motor.
+
 GND → Arduino GND: Ground connection.
 
 Power Supply
 5V from the Arduino will power the RFID module, LCD display, and the servo motor.
-GND: Ensure all components share the common ground to avoid electrical problems.
 
-# Summary of Connections
-Component	Pin Name	Arduino Pin
-RFID (SDA)	SS	Pin 10
-RFID (SCK)	Clock	Pin 13
-RFID (MOSI)	Data In	Pin 11
-RFID (MISO)	Data Out	Pin 12
-RFID (RST)	Reset	Pin 9
-LCD (SDA)	Data	Pin A4
-LCD (SCL)	Clock	Pin A5
-Buzzer (+)	Signal	Pin 7
-Servo (PWM)	PWM	Pin 6
-GND	Ground	GND
-VCC	Power	5V
+GND: Ensure all components share the common ground to avoid electrical problems.
 
 # Setup Instructions
 Hardware Setup:
@@ -86,5 +85,7 @@ Re-upload the updated code to the Arduino.
 
 # Future Enhancements
 Integrate with a database to dynamically approve or reject tags.
+
 Add a logging system to track who accessed the door and when.
+
 Include a password-protected system for administrators to manage RFID tags.
